@@ -1,7 +1,8 @@
 <h1 align="center">Laravel Barcode</h1>
 
-[![Laravel 9.x](https://img.shields.io/badge/Laravel-9.x-red.svg?style=flat-square)](http://laravel.com)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/ageekdev/laravel-barcode/run-tests?label=tests&style=flat-square)](https://github.com/ageekdev/laravel-barcode/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Laravel 9.x](https://img.shields.io/badge/Laravel-9.x-red.svg?style=flat-square)](https://laravel.com/docs/9.x)
+[![Laravel 10.x](https://img.shields.io/badge/Laravel-10.x-red.svg?style=flat-square)](http://laravel.com)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ageekdev/laravel-barcode/run-tests.yml?style=flat-square)](https://github.com/ageekdev/laravel-barcode/actions/workflows/run-tests.yml)
 
 This package can generate SVG, PNG, JPG and HTML images from the most used 1D barcode standards. Here's how you can use it:
 
