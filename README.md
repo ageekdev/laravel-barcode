@@ -13,7 +13,7 @@ You can install the package via composer:
 ```bash
 composer require ageekdev/laravel-barcode
 ```
-git pull
+
 You can publish the config file with:
  
 ```bash
