@@ -9,7 +9,7 @@ it('can generate code 128 barcode', function () {
         ->type(Type::TYPE_CODE_128)
         ->generate('081231723897');
 
-    $this->assertStringEqualsFile('tests/verified-files/081231723897-dynamic-code128.html', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/081231723897-dynamic-code128.html'));
 });
 
 it('can generate imb barcode to test heights', function () {
@@ -18,5 +18,5 @@ it('can generate imb barcode to test heights', function () {
         ->type(Type::TYPE_IMB)
         ->generate('12345678903');
 
-    $this->assertStringEqualsFile('tests/verified-files/12345678903-dynamic-imb.html', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/12345678903-dynamic-imb.html'));
 });

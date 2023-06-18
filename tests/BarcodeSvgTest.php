@@ -11,5 +11,5 @@ it('can generate ean 13 barcode', function () {
         ->type(Type::TYPE_EAN_13)
         ->generate('081231723897');
 
-    $this->assertStringEqualsFile('tests/verified-files/081231723897-ean13.svg', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/081231723897-ean13.svg'));
 });

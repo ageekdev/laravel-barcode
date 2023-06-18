@@ -11,7 +11,7 @@ it('can generate code 128 barcode', function () {
         ->type(Type::TYPE_CODE_128)
         ->generate('081231723897');
 
-    $this->assertEquals('PNG', substr($generated, 1, 3));
+    expect(substr($generated, 1, 3))->toBe('PNG');
 });
 
 it('can generate code 39 barcode', function () {
@@ -21,10 +21,10 @@ it('can generate code 39 barcode', function () {
 
     $imageInfo = getimagesizefromstring($result);
 
-    $this->assertGreaterThan(100, strlen($result));
-    $this->assertEquals(224, $imageInfo[0]); // Image width
-    $this->assertEquals(30, $imageInfo[1]); // Image height
-    $this->assertEquals('image/png', $imageInfo['mime']);
+    expect(strlen($result))->toBeGreaterThan(100)
+        ->and($imageInfo[0])->toEqual(224)
+        ->and($imageInfo[1])->toEqual(30)
+        ->and($imageInfo['mime'])->toEqual('image/png');
 });
 
 it('can use different height', function () {
@@ -34,10 +34,10 @@ it('can use different height', function () {
 
     $imageInfo = getimagesizefromstring($result);
 
-    $this->assertGreaterThan(100, strlen($result));
-    $this->assertEquals(202, $imageInfo[0]); // Image width
-    $this->assertEquals(45, $imageInfo[1]); // Image height
-    $this->assertEquals('image/png', $imageInfo['mime']);
+    expect(strlen($result))->toBeGreaterThan(100)
+        ->and($imageInfo[0])->toEqual(202)
+        ->and($imageInfo[1])->toEqual(45)
+        ->and($imageInfo['mime'])->toEqual('image/png');
 });
 
 it('can use different width factor', function () {
@@ -48,9 +48,10 @@ it('can use different width factor', function () {
 
     $imageInfo = getimagesizefromstring($result);
 
-    $this->assertGreaterThan(100, strlen($result));
-    $this->assertEquals(505, $imageInfo[0]); // Image width
-    $this->assertEquals('image/png', $imageInfo['mime']);
+    expect(strlen($result))->toBeGreaterThan(100)
+        ->and($imageInfo[0])->toEqual(505)
+        ->and($imageInfo['mime'])->toEqual('image/png');
+
 });
 
 it('can generate code 128 barcode imagick', function () {
@@ -63,7 +64,7 @@ it('can generate code 128 barcode imagick', function () {
         ->useImagick()
         ->generate('081231723897');
 
-    $this->assertEquals('PNG', substr($generated, 1, 3));
+    expect(substr($generated, 1, 3))->toBe('PNG');
 });
 
 it('can generate code 39 barcode imagick', function () {
@@ -80,10 +81,10 @@ it('can generate code 39 barcode imagick', function () {
 
     $imageInfo = getimagesizefromstring($result);
 
-    $this->assertGreaterThan(100, strlen($result));
-    $this->assertEquals(224, $imageInfo[0]); // Image width
-    $this->assertEquals(30, $imageInfo[1]); // Image height
-    $this->assertEquals('image/png', $imageInfo['mime']);
+    expect(strlen($result))->toBeGreaterThan(100)
+        ->and($imageInfo[0])->toEqual(224)
+        ->and($imageInfo[1])->toEqual(30)
+        ->and($imageInfo['mime'])->toEqual('image/png');
 });
 
 it('can use different height imagick', function () {
@@ -101,10 +102,10 @@ it('can use different height imagick', function () {
 
     $imageInfo = getimagesizefromstring($result);
 
-    $this->assertGreaterThan(100, strlen($result));
-    $this->assertEquals(202, $imageInfo[0]); // Image width
-    $this->assertEquals(45, $imageInfo[1]); // Image height
-    $this->assertEquals('image/png', $imageInfo['mime']);
+    expect(strlen($result))->toBeGreaterThan(100)
+        ->and($imageInfo[0])->toEqual(202)
+        ->and($imageInfo[1])->toEqual(45)
+        ->and($imageInfo['mime'])->toEqual('image/png');
 });
 
 it('can use different width factor imagick', function () {
@@ -121,7 +122,7 @@ it('can use different width factor imagick', function () {
 
     $imageInfo = getimagesizefromstring($result);
 
-    $this->assertGreaterThan(100, strlen($result));
-    $this->assertEquals(505, $imageInfo[0]); // Image width
-    $this->assertEquals('image/png', $imageInfo['mime']);
+    expect(strlen($result))->toBeGreaterThan(100)
+        ->and($imageInfo[0])->toEqual(505)
+        ->and($imageInfo['mime'])->toEqual('image/png');
 });

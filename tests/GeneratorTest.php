@@ -41,7 +41,7 @@ it('ean 13 generator accepting 13 chars', function () {
         ->type(Type::TYPE_EAN_13)
         ->generate('0049000004632');
 
-    $this->assertStringEqualsFile('tests/verified-files/0049000004632-ean13.svg', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/0049000004632-ean13.svg'));
 });
 
 it('ean 13 generator accepting 12 chars and generates 13 th check digit', function () {
@@ -52,7 +52,7 @@ it('ean 13 generator accepting 12 chars and generates 13 th check digit', functi
         ->type(Type::TYPE_EAN_13)
         ->generate('004900000463');
 
-    $this->assertStringEqualsFile('tests/verified-files/0049000004632-ean13.svg', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/0049000004632-ean13.svg'));
 });
 
 it('ean 13 generator accepting 11 chars and generates 13 th check digit and adds leading zero', function () {
@@ -63,7 +63,7 @@ it('ean 13 generator accepting 11 chars and generates 13 th check digit and adds
         ->type(Type::TYPE_EAN_13)
         ->generate('04900000463');
 
-    $this->assertStringEqualsFile('tests/verified-files/0049000004632-ean13.svg', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/0049000004632-ean13.svg'));
 });
 
 it('ean 13 generator throws exception when wrong check digit is given', function () {

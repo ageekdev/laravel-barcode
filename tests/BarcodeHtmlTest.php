@@ -3,7 +3,7 @@
 use AgeekDev\Barcode\Enums\Type;
 use AgeekDev\Barcode\Facades\Barcode;
 
-it('html_barcode_generator_can_generate_code_128_barcode', function () {
+it('html barcode generator can generate code 128 barcode', function () {
     $generated = Barcode::imageType('html')
         ->foregroundColor('black')
         ->widthFactor(2)
@@ -11,10 +11,10 @@ it('html_barcode_generator_can_generate_code_128_barcode', function () {
         ->type(Type::TYPE_CODE_128)
         ->generate('081231723897');
 
-    $this->assertStringEqualsFile('tests/verified-files/081231723897-code128.html', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/081231723897-code128.html'));
 });
 
-it('html_barcode_generator_can_generate_imb_barcode_to_test_heights', function () {
+it('html barcode generator can generate imb barcode to test heights', function () {
     $generated = Barcode::imageType('html')
         ->foregroundColor('black')
         ->widthFactor(2)
@@ -22,5 +22,5 @@ it('html_barcode_generator_can_generate_imb_barcode_to_test_heights', function (
         ->type(Type::TYPE_IMB)
         ->generate('12345678903');
 
-    $this->assertStringEqualsFile('tests/verified-files/12345678903-imb.html', $generated);
+    expect($generated)->toBe(file_get_contents('tests/verified-files/12345678903-imb.html'));
 });
