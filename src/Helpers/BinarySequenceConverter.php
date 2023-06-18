@@ -17,11 +17,6 @@ class BinarySequenceConverter
         return self::generate($sequence, $barcode);
     }
 
-    /**
-     * @param  string  $sequence
-     * @param  Barcode  $barcode
-     * @return Barcode
-     */
     public static function generate(string $sequence, Barcode $barcode): Barcode
     {
         $len = strlen($sequence);

@@ -55,8 +55,6 @@ class TypeStandard2of5 implements TypeInterface
      *
      * @param $code (string) code to process.
      * @return int checksum.
-     *
-     * @protected
      */
     protected function checksum_s25(string $code): int
     {

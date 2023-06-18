@@ -2,17 +2,18 @@
 
 namespace AgeekDev\Barcode\Facades;
 
+use AgeekDev\Barcode\Contracts\ImageType;
 use AgeekDev\Barcode\Enums\Type;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static \AgeekDev\Barcode\Contracts\ImageType foregroundColor(string $foregroundColor)
- * @method static \AgeekDev\Barcode\Contracts\ImageType height(int $height)
- * @method static \AgeekDev\Barcode\Contracts\ImageType widthFactor(int $widthFactor)
- * @method static \AgeekDev\Barcode\Contracts\ImageType type(Type $type)
- * @method static \AgeekDev\Barcode\Contracts\ImageType imageType(?string $driver)
- * @method static \AgeekDev\Barcode\Contracts\ImageType useImagick()
- * @method static \AgeekDev\Barcode\Contracts\ImageType useGd()
+ * @method static ImageType foregroundColor(string $foregroundColor)
+ * @method static ImageType height(int $height)
+ * @method static ImageType widthFactor(int $widthFactor)
+ * @method static ImageType type(Type $type)
+ * @method static ImageType imageType(?string $driver)
+ * @method static ImageType useImagick()
+ * @method static ImageType useGd()
  * @method static string generate(string $text)
  *
  * @see \AgeekDev\Barcode\BarcodeManager

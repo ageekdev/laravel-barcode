@@ -21,8 +21,6 @@ class BarcodeManager implements Factory
 {
     /**
      * The container instance.
-     *
-     * @var \Illuminate\Contracts\Container\Container
      */
     protected Container $container;
 
@@ -35,23 +33,16 @@ class BarcodeManager implements Factory
 
     /**
      * The registered custom driver creators.
-     *
-     * @var array
      */
     protected array $customCreators = [];
 
     /**
      * The array of created "drivers".
-     *
-     * @var array
      */
     protected array $imageTypes = [];
 
     /**
      * Create a new manager instance.
-     *
-     * @param  \Illuminate\Contracts\Container\Container  $container
-     * @return void
      *
      * @throws BindingResolutionException
      */
@@ -63,9 +54,6 @@ class BarcodeManager implements Factory
 
     /**
      * Get a image type instance.
-     *
-     * @param  string|null  $name
-     * @return ImageType
      */
     public function imageType(string $name = null): ImageType
     {
@@ -84,10 +72,7 @@ class BarcodeManager implements Factory
     /**
      * Create a new driver instance.
      *
-     * @param  string  $driver
-     * @return ImageType
-     *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     protected function createDriver(string $driver): ImageType
     {
@@ -109,9 +94,6 @@ class BarcodeManager implements Factory
 
     /**
      * Call a custom driver creator.
-     *
-     * @param  string  $driver
-     * @return ImageType
      */
     protected function callCustomCreator(string $driver): ImageType
     {
@@ -120,8 +102,6 @@ class BarcodeManager implements Factory
 
     /**
      * Create an HTML instance.
-     *
-     * @return ImageType
      */
     public function createHtmlDriver(): ImageType
     {
@@ -130,8 +110,6 @@ class BarcodeManager implements Factory
 
     /**
      * Create an DynamicHTML instance.
-     *
-     * @return ImageType
      */
     public function createDynamicHtmlDriver(): ImageType
     {
@@ -140,8 +118,6 @@ class BarcodeManager implements Factory
 
     /**
      * Create an JPG instance.
-     *
-     * @return ImageType
      */
     public function createJpgDriver(): ImageType
     {
@@ -150,8 +126,6 @@ class BarcodeManager implements Factory
 
     /**
      * Create an PNG instance.
-     *
-     * @return ImageType
      */
     public function createPngDriver(): ImageType
     {
@@ -160,8 +134,6 @@ class BarcodeManager implements Factory
 
     /**
      * Create an SVG instance.
-     *
-     * @return ImageType
      */
     public function createSvgDriver(): ImageType
     {
@@ -170,9 +142,6 @@ class BarcodeManager implements Factory
 
     /**
      * Generate Barcode.
-     *
-     * @param  string  $text
-     * @return string
      */
     public function generate(string $text): string
     {
@@ -181,9 +150,6 @@ class BarcodeManager implements Factory
 
     /**
      * Set the barcode type.
-     *
-     * @param  Type  $type
-     * @return ImageType
      */
     public function type(Type $type): ImageType
     {
@@ -191,8 +157,7 @@ class BarcodeManager implements Factory
     }
 
     /**
-     * @param  string  $foregroundColor
-     * @return ImageType
+     * Set the barcode foreground color.
      */
     public function foregroundColor(string $foregroundColor): ImageType
     {
@@ -200,8 +165,7 @@ class BarcodeManager implements Factory
     }
 
     /**
-     * @param  int  $height
-     * @return ImageType
+     * Set the barcode height.
      */
     public function height(int $height): ImageType
     {
@@ -209,8 +173,7 @@ class BarcodeManager implements Factory
     }
 
     /**
-     * @param  int  $widthFactor
-     * @return ImageType
+     * Set the barcode width factor.
      */
     public function widthFactor(int $widthFactor): ImageType
     {
@@ -219,8 +182,6 @@ class BarcodeManager implements Factory
 
     /**
      * Force the use of Imagick image extension
-     *
-     * @return ImageType
      *
      * @throws BarcodeException
      */
@@ -240,8 +201,6 @@ class BarcodeManager implements Factory
     /**
      * Force the use of the GD image library
      *
-     * @return ImageType
-     *
      * @throws BarcodeException
      */
     public function useGd(): ImageType
@@ -259,8 +218,6 @@ class BarcodeManager implements Factory
 
     /**
      * Get the default driver name.
-     *
-     * @return string
      */
     public function getDefaultDriver(): string
     {
@@ -269,12 +226,8 @@ class BarcodeManager implements Factory
 
     /**
      * Register a custom driver creator Closure.
-     *
-     * @param  string  $imageType
-     * @param  \Closure  $callback
-     * @return $this
      */
-    public function extend(string $imageType, Closure $callback): static
+    public function extend(string $imageType, Closure $callback): self
     {
         $this->customCreators[$imageType] = $callback;
 
@@ -283,8 +236,6 @@ class BarcodeManager implements Factory
 
     /**
      * Get the container instance used by the manager.
-     *
-     * @return \Illuminate\Contracts\Container\Container
      */
     public function getContainer(): Container
     {
@@ -293,11 +244,8 @@ class BarcodeManager implements Factory
 
     /**
      * Set the container instance used by the manager.
-     *
-     * @param  \Illuminate\Contracts\Container\Container  $container
-     * @return $this
      */
-    public function setContainer(Container $container): static
+    public function setContainer(Container $container): self
     {
         $this->container = $container;
 
@@ -306,11 +254,8 @@ class BarcodeManager implements Factory
 
     /**
      * Unset the given disk instances.
-     *
-     * @param  array|string  $imageType
-     * @return $this
      */
-    public function forgetImageType(array|string $imageType): static
+    public function forgetImageType(array|string $imageType): self
     {
         foreach ((array) $imageType as $imageTypeName) {
             unset($this->imageTypes[$imageTypeName]);
@@ -322,8 +267,6 @@ class BarcodeManager implements Factory
     /**
      * Dynamically call the default driver instance.
      *
-     * @param  string  $method
-     * @param  array  $parameters
      * @return mixed
      */
     public function __call(string $method, array $parameters)

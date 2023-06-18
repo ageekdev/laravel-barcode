@@ -10,8 +10,6 @@ abstract class AbstractGenerator implements ImageType
 {
     /**
      * The foreground color of the barcode.
-     *
-     * @var string|array
      */
     protected string|array $foregroundColor = '#000000';
 
@@ -39,10 +37,6 @@ abstract class AbstractGenerator implements ImageType
         return $type->class();
     }
 
-    /**
-     * @param  Type  $type
-     * @return $this
-     */
     public function type(Type $type): static
     {
         $this->type = $type;
@@ -50,10 +44,6 @@ abstract class AbstractGenerator implements ImageType
         return $this;
     }
 
-    /**
-     * @param  string  $foregroundColor
-     * @return $this
-     */
     public function foregroundColor(string $foregroundColor): static
     {
         $this->foregroundColor = $foregroundColor;
@@ -61,10 +51,6 @@ abstract class AbstractGenerator implements ImageType
         return $this;
     }
 
-    /**
-     * @param  int  $height
-     * @return $this
-     */
     public function height(int $height): static
     {
         $this->height = $height;
@@ -72,10 +58,6 @@ abstract class AbstractGenerator implements ImageType
         return $this;
     }
 
-    /**
-     * @param  int  $widthFactor
-     * @return $this
-     */
     public function widthFactor(int $widthFactor): static
     {
         $this->widthFactor = $widthFactor;

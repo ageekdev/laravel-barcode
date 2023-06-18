@@ -117,9 +117,6 @@ class TypeCode39 implements TypeInterface
      * Encode a string to be used for CODE 39 Extended mode.
      *
      * @param  string  $code code to represent.
-     * @return string encoded string.
-     *
-     * @protected
      *
      * @throws InvalidCharacterException
      */
@@ -272,9 +269,6 @@ class TypeCode39 implements TypeInterface
      * Calculate CODE 39 checksum (modulo 43).
      *
      * @param  string  $code code to represent.
-     * @return string char checksum.
-     *
-     * @protected
      */
     protected function checksum_code39(string $code): string
     {

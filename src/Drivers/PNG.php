@@ -33,10 +33,8 @@ class PNG extends AbstractGenerator
 
     /**
      * Force the use of Imagick image extension.
-     *
-     * @return $this
      */
-    public function useImagick(): static
+    public function useImagick(): self
     {
         $this->useImagick = true;
 
@@ -45,10 +43,8 @@ class PNG extends AbstractGenerator
 
     /**
      * Force the use of the GD image library.
-     *
-     * @return $this
      */
-    public function useGd(): static
+    public function useGd(): self
     {
         $this->useImagick = false;
 
@@ -110,9 +106,6 @@ class PNG extends AbstractGenerator
         return ob_get_clean();
     }
 
-    /**
-     * @return string|array
-     */
     public function getForegroundColor(): string|array
     {
         $color = Hex::fromString($this->foregroundColor)->toRgba();

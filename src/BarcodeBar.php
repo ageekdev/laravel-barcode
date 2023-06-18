@@ -24,21 +24,33 @@ class BarcodeBar
         $this->type = $drawBar ? self::TYPE_BAR : self::TYPE_SPACING;
     }
 
+    /**
+     * Get the width.
+     */
     public function getWidth(): int
     {
         return $this->width;
     }
 
+    /**
+     * Get the height.
+     */
     public function getHeight(): int
     {
         return $this->height;
     }
 
+    /**
+     * Get position vertical.
+     */
     public function getPositionVertical(): int
     {
         return $this->positionVertical;
     }
 
+    /**
+     *  Bar or not.
+     */
     public function isBar(): bool
     {
         return $this->type === self::TYPE_BAR;

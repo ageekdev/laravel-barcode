@@ -14,7 +14,6 @@ class DynamicHTML extends AbstractGenerator
      * This 'dynamic' version uses percentage based widths and heights, resulting in a vector-y qualitative result.
      *
      * @param  string  $text code to print
-     * @return string HTML code.
      */
     public function generate(string $text): string
     {

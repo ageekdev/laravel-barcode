@@ -415,7 +415,6 @@ class TypeIntelligentMailBarcode implements TypeInterface
      * (requires PHP bcmath extension)
      *
      * @param $number (string) number to convert specified as a string
-     * @return string hexadecimal representation
      */
     protected function dec_to_hex(string $number): string
     {
@@ -439,8 +438,6 @@ class TypeIntelligentMailBarcode implements TypeInterface
      *
      * @param $code_arr array of hexadecimal values (13 bytes holding 102 bits right justified).
      * @return int 11 bit Frame Check Sequence as integer (decimal base)
-     *
-     * @protected
      */
     protected function imb_crc11fcs(array $code_arr): int
     {
@@ -499,9 +496,6 @@ class TypeIntelligentMailBarcode implements TypeInterface
      *
      * @param $n (int) is the type of table: 2 for 2of13 table, 5 for 5of13table
      * @param $size (int) size of table (78 for n=2 and 1287 for n=5)
-     * @return array requested table
-     *
-     * @protected
      */
     protected function imb_tables(int $n, int $size): array
     {
@@ -539,10 +533,7 @@ class TypeIntelligentMailBarcode implements TypeInterface
     /**
      * Reverse unsigned short value
      *
-     * @param $num (int) value to reversr
-     * @return int reversed value
-     *
-     * @protected
+     * @param $num (int) value to reverse
      */
     protected function imb_reverse_us(int $num): int
     {
