@@ -11,7 +11,7 @@ jobs:
         name: phpstan
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
 
             - name: Setup PHP
               uses: shivammathur/setup-php@v2
@@ -19,8 +19,8 @@ jobs:
                   php-version: '8.2'
                   coverage: none
 
-            - name: Install composer dependencies
-              uses: ramsey/composer-install@v2
+            - name: Install Dependencies
+              run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress
 
             - name: Run PHPStan
               timeout-minutes: 2
