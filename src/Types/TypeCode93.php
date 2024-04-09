@@ -245,7 +245,7 @@ class TypeCode93 implements TypeInterface
     /**
      * Calculate CODE 93 checksum (modulo 47).
      *
-     * @param $code (string) code to represent.
+     * @param  $code  (string) code to represent.
      */
     protected function checksum_code93(string $code): string
     {

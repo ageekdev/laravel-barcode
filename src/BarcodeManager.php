@@ -55,7 +55,7 @@ class BarcodeManager implements Factory
     /**
      * Get a image type instance.
      */
-    public function imageType(string $name = null): ImageType
+    public function imageType(?string $name = null): ImageType
     {
         $name = $name ?: $this->getDefaultDriver();
 

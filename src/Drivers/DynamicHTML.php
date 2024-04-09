@@ -13,7 +13,7 @@ class DynamicHTML extends AbstractGenerator
      * Return an HTML representation of barcode.
      * This 'dynamic' version uses percentage based widths and heights, resulting in a vector-y qualitative result.
      *
-     * @param  string  $text code to print
+     * @param  string  $text  code to print
      */
     public function generate(string $text): string
     {

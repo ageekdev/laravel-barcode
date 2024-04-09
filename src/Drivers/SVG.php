@@ -10,7 +10,7 @@ class SVG extends AbstractGenerator
     /**
      * Return SVG string representation of barcode.
      *
-     * @param  string  $text code to print
+     * @param  string  $text  code to print
      */
     public function generate(string $text): string
     {

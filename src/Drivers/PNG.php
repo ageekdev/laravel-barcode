@@ -52,7 +52,7 @@ class PNG extends AbstractGenerator
     }
 
     /**
-     * @param  string  $text code to print
+     * @param  string  $text  code to print
      *
      * @throws \ImagickDrawException
      * @throws \ImagickException

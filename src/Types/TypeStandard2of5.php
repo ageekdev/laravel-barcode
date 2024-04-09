@@ -53,7 +53,7 @@ class TypeStandard2of5 implements TypeInterface
     /**
      * Checksum for standard 2 of 5 barcodes.
      *
-     * @param $code (string) code to process.
+     * @param  $code  (string) code to process.
      * @return int checksum.
      */
     protected function checksum_s25(string $code): int

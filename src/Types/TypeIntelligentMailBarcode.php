@@ -414,7 +414,7 @@ class TypeIntelligentMailBarcode implements TypeInterface
      * Convert large integer number to hexadecimal representation.
      * (requires PHP bcmath extension)
      *
-     * @param $number (string) number to convert specified as a string
+     * @param  $number  (string) number to convert specified as a string
      */
     protected function dec_to_hex(string $number): string
     {
@@ -436,7 +436,7 @@ class TypeIntelligentMailBarcode implements TypeInterface
     /**
      * Intelligent Mail Barcode calculation of Frame Check Sequence
      *
-     * @param $code_arr array of hexadecimal values (13 bytes holding 102 bits right justified).
+     * @param  $code_arr  array of hexadecimal values (13 bytes holding 102 bits right justified).
      * @return int 11 bit Frame Check Sequence as integer (decimal base)
      */
     protected function imb_crc11fcs(array $code_arr): int
@@ -475,7 +475,7 @@ class TypeIntelligentMailBarcode implements TypeInterface
      * Convert large hexadecimal number to decimal representation (string).
      * (requires PHP bcmath extension)
      *
-     * @param $hex (string) hexadecimal number to convert specified as a string
+     * @param  $hex  (string) hexadecimal number to convert specified as a string
      * @return int|string hexadecimal representation
      */
     protected function hex_to_dec(string $hex): int|string
@@ -494,8 +494,8 @@ class TypeIntelligentMailBarcode implements TypeInterface
     /**
      * generate Nof13 tables used for Intelligent Mail Barcode
      *
-     * @param $n (int) is the type of table: 2 for 2of13 table, 5 for 5of13table
-     * @param $size (int) size of table (78 for n=2 and 1287 for n=5)
+     * @param  $n  (int) is the type of table: 2 for 2of13 table, 5 for 5of13table
+     * @param  $size  (int) size of table (78 for n=2 and 1287 for n=5)
      */
     protected function imb_tables(int $n, int $size): array
     {
@@ -533,7 +533,7 @@ class TypeIntelligentMailBarcode implements TypeInterface
     /**
      * Reverse unsigned short value
      *
-     * @param $num (int) value to reverse
+     * @param  $num  (int) value to reverse
      */
     protected function imb_reverse_us(int $num): int
     {

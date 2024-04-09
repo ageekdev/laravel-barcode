@@ -376,7 +376,7 @@ class TypeCode128 implements TypeInterface
     /**
      * Split text code in A/B sequence for 128 code
      *
-     * @param $code (string) code to split.
+     * @param  $code  (string) code to split.
      */
     protected function get128ABsequence(string $code): array
     {
