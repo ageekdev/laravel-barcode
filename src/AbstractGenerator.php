@@ -3,6 +3,7 @@
 namespace AgeekDev\Barcode;
 
 use AgeekDev\Barcode\Contracts\ImageType;
+use AgeekDev\Barcode\Enums\BarcodeType;
 use AgeekDev\Barcode\Enums\Type;
 use AgeekDev\Barcode\Types\TypeInterface;
 
@@ -17,7 +18,7 @@ abstract class AbstractGenerator implements ImageType
 
     protected int $widthFactor;
 
-    protected Type $type;
+    protected BarcodeType|Type $type;
 
     public function __construct()
     {
@@ -27,17 +28,17 @@ abstract class AbstractGenerator implements ImageType
         $this->type = config('barcode.type');
     }
 
-    protected function getBarcodeData(string $code, Type $type): Barcode
+    protected function getBarcodeData(string $code, BarcodeType|Type $type): Barcode
     {
         return $this->createDataBuilderForType($type)->getBarcodeData($code);
     }
 
-    protected function createDataBuilderForType(Type $type): TypeInterface
+    protected function createDataBuilderForType(BarcodeType|Type $type): TypeInterface
     {
         return $type->class();
     }
 
-    public function type(Type $type): static
+    public function type(BarcodeType|Type $type): static
     {
         $this->type = $type;
 

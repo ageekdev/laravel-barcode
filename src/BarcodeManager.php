@@ -9,6 +9,7 @@ use AgeekDev\Barcode\Drivers\HTML;
 use AgeekDev\Barcode\Drivers\JPG;
 use AgeekDev\Barcode\Drivers\PNG;
 use AgeekDev\Barcode\Drivers\SVG;
+use AgeekDev\Barcode\Enums\BarcodeType;
 use AgeekDev\Barcode\Enums\Type;
 use AgeekDev\Barcode\Exceptions\BarcodeException;
 use Closure;
@@ -151,7 +152,7 @@ class BarcodeManager implements Factory
     /**
      * Set the barcode type.
      */
-    public function type(Type $type): ImageType
+    public function type(BarcodeType|Type $type): ImageType
     {
         return $this->imageType()->type($type);
     }

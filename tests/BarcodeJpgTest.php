@@ -1,6 +1,6 @@
 <?php
 
-use AgeekDev\Barcode\Enums\Type;
+use AgeekDev\Barcode\Enums\BarcodeType;
 use AgeekDev\Barcode\Facades\Barcode;
 
 it('can generate code 128 barcode', function () {
@@ -9,7 +9,7 @@ it('can generate code 128 barcode', function () {
         ->foregroundColor('#000000')
         ->widthFactor(2)
         ->height(30)
-        ->type(Type::TYPE_CODE_128)
+        ->type(BarcodeType::CODE_128)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);
@@ -25,7 +25,7 @@ it('can generate code 39 barcode', function () {
         ->useGd()
         ->foregroundColor('#000000')
         ->widthFactor(1)
-        ->type(Type::TYPE_CODE_39)
+        ->type(BarcodeType::CODE_39)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);
@@ -42,7 +42,7 @@ it('can use different height', function () {
         ->foregroundColor('#000000')
         ->widthFactor(2)
         ->height(45)
-        ->type(Type::TYPE_CODE_128)
+        ->type(BarcodeType::CODE_128)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);
@@ -58,7 +58,7 @@ it('can use different width factor', function () {
         ->useGd()
         ->foregroundColor('#000000')
         ->widthFactor(5)
-        ->type(Type::TYPE_CODE_128)
+        ->type(BarcodeType::CODE_128)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);
@@ -76,7 +76,7 @@ it('can generate code 128 barcode imagick', function () {
     $result = Barcode::imageType('jpg')
         ->useImagick()
         ->foregroundColor('#000000')
-        ->type(Type::TYPE_CODE_128)
+        ->type(BarcodeType::CODE_128)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);
@@ -96,7 +96,7 @@ it('can generate code 39 barcode imagick', function () {
         ->useImagick()
         ->foregroundColor('#000000')
         ->widthFactor(1)
-        ->type(Type::TYPE_CODE_39)
+        ->type(BarcodeType::CODE_39)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);
@@ -117,7 +117,7 @@ it('can use different height imagick', function () {
         ->foregroundColor('#000000')
         ->widthFactor(2)
         ->height(45)
-        ->type(Type::TYPE_CODE_128)
+        ->type(BarcodeType::CODE_128)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);
@@ -137,7 +137,7 @@ it('can use different width factor imagick', function () {
         ->useImagick()
         ->foregroundColor('#000000')
         ->widthFactor(5)
-        ->type(Type::TYPE_CODE_128)
+        ->type(BarcodeType::CODE_128)
         ->generate('081231723897');
 
     $imageInfo = getimagesizefromstring($result);

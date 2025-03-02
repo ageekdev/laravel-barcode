@@ -35,6 +35,9 @@ use AgeekDev\Barcode\Types\TypeUpcE;
 use AgeekDev\Barcode\Types\TypeUpcExtension2;
 use AgeekDev\Barcode\Types\TypeUpcExtension5;
 
+/**
+ * @deprecated see BarcodeType
+ */
 enum Type: string
 {
     case TYPE_CODE_32 = 'C32';
