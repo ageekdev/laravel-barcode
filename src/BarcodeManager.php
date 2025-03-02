@@ -105,7 +105,7 @@ class BarcodeManager implements Factory
      */
     public function createHtmlDriver(): ImageType
     {
-        return new HTML();
+        return new HTML;
     }
 
     /**
@@ -113,7 +113,7 @@ class BarcodeManager implements Factory
      */
     public function createDynamicHtmlDriver(): ImageType
     {
-        return new DynamicHTML();
+        return new DynamicHTML;
     }
 
     /**
@@ -121,7 +121,7 @@ class BarcodeManager implements Factory
      */
     public function createJpgDriver(): ImageType
     {
-        return new JPG();
+        return new JPG;
     }
 
     /**
@@ -129,7 +129,7 @@ class BarcodeManager implements Factory
      */
     public function createPngDriver(): ImageType
     {
-        return new PNG();
+        return new PNG;
     }
 
     /**
@@ -137,7 +137,7 @@ class BarcodeManager implements Factory
      */
     public function createSvgDriver(): ImageType
     {
-        return new SVG();
+        return new SVG;
     }
 
     /**

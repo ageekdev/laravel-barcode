@@ -2,6 +2,4 @@
 
 namespace AgeekDev\Barcode\Exceptions;
 
-class InvalidCharacterException extends BarcodeException
-{
-}
+class InvalidCharacterException extends BarcodeException {}

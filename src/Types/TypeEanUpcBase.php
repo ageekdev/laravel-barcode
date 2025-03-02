@@ -51,7 +51,7 @@ abstract class TypeEanUpcBase implements TypeInterface
         } elseif ($checksumDigit !== (int) $code[$dataLength]) {
             // If length of given barcode is same as final length, barcode is including checksum
             // Make sure that checksum is the same as we calculated
-            throw new InvalidCheckDigitException();
+            throw new InvalidCheckDigitException;
         }
 
         if ($this->upca || $this->upce) {

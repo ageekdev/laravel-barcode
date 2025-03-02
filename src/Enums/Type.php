@@ -102,67 +102,67 @@ enum Type: string
     public function class(): TypeInterface
     {
         return match ($this) {
-            self::TYPE_CODE_32 => new TypeCode32(),
+            self::TYPE_CODE_32 => new TypeCode32,
 
-            self::TYPE_CODE_39 => new TypeCode39(),
+            self::TYPE_CODE_39 => new TypeCode39,
 
-            self::TYPE_CODE_39_CHECKSUM => new TypeCode39Checksum(),
+            self::TYPE_CODE_39_CHECKSUM => new TypeCode39Checksum,
 
-            self::TYPE_CODE_39E => new TypeCode39Extended(),
+            self::TYPE_CODE_39E => new TypeCode39Extended,
 
-            self::TYPE_CODE_39E_CHECKSUM => new TypeCode39ExtendedChecksum(),
+            self::TYPE_CODE_39E_CHECKSUM => new TypeCode39ExtendedChecksum,
 
-            self::TYPE_CODE_93 => new TypeCode93(),
+            self::TYPE_CODE_93 => new TypeCode93,
 
-            self::TYPE_STANDARD_2_5 => new TypeStandard2of5(),
+            self::TYPE_STANDARD_2_5 => new TypeStandard2of5,
 
-            self::TYPE_STANDARD_2_5_CHECKSUM => new TypeStandard2of5Checksum(),
+            self::TYPE_STANDARD_2_5_CHECKSUM => new TypeStandard2of5Checksum,
 
-            self::TYPE_INTERLEAVED_2_5 => new TypeInterleaved25(),
+            self::TYPE_INTERLEAVED_2_5 => new TypeInterleaved25,
 
-            self::TYPE_INTERLEAVED_2_5_CHECKSUM => new TypeInterleaved25Checksum(),
+            self::TYPE_INTERLEAVED_2_5_CHECKSUM => new TypeInterleaved25Checksum,
 
-            self::TYPE_CODE_128 => new TypeCode128(),
+            self::TYPE_CODE_128 => new TypeCode128,
 
-            self::TYPE_CODE_128_A => new TypeCode128A(),
+            self::TYPE_CODE_128_A => new TypeCode128A,
 
-            self::TYPE_CODE_128_B => new TypeCode128B(),
+            self::TYPE_CODE_128_B => new TypeCode128B,
 
-            self::TYPE_CODE_128_C => new TypeCode128C(),
+            self::TYPE_CODE_128_C => new TypeCode128C,
 
-            self::TYPE_EAN_2 => new TypeUpcExtension2(),
+            self::TYPE_EAN_2 => new TypeUpcExtension2,
 
-            self::TYPE_EAN_5 => new TypeUpcExtension5(),
+            self::TYPE_EAN_5 => new TypeUpcExtension5,
 
-            self::TYPE_EAN_8 => new TypeEan8(),
+            self::TYPE_EAN_8 => new TypeEan8,
 
-            self::TYPE_EAN_13 => new TypeEan13(),
+            self::TYPE_EAN_13 => new TypeEan13,
 
-            self::TYPE_UPC_A => new TypeUpcA(),
+            self::TYPE_UPC_A => new TypeUpcA,
 
-            self::TYPE_UPC_E => new TypeUpcE(),
+            self::TYPE_UPC_E => new TypeUpcE,
 
-            self::TYPE_MSI => new TypeMsi(),
+            self::TYPE_MSI => new TypeMsi,
 
-            self::TYPE_MSI_CHECKSUM => new TypeMsiChecksum(),
+            self::TYPE_MSI_CHECKSUM => new TypeMsiChecksum,
 
-            self::TYPE_POSTNET => new TypePostnet(),
+            self::TYPE_POSTNET => new TypePostnet,
 
-            self::TYPE_PLANET => new TypePlanet(),
+            self::TYPE_PLANET => new TypePlanet,
 
-            self::TYPE_RMS4CC => new TypeRms4cc(),
+            self::TYPE_RMS4CC => new TypeRms4cc,
 
-            self::TYPE_KIX => new TypeKix(),
+            self::TYPE_KIX => new TypeKix,
 
-            self::TYPE_IMB => new TypeIntelligentMailBarcode(),
+            self::TYPE_IMB => new TypeIntelligentMailBarcode,
 
-            self::TYPE_CODABAR => new TypeCodabar(),
+            self::TYPE_CODABAR => new TypeCodabar,
 
-            self::TYPE_CODE_11 => new TypeCode11(),
+            self::TYPE_CODE_11 => new TypeCode11,
 
-            self::TYPE_PHARMA_CODE => new TypePharmacode(),
+            self::TYPE_PHARMA_CODE => new TypePharmacode,
 
-            self::TYPE_PHARMA_CODE_TWO_TRACKS => new TypePharmacodeTwoCode(),
+            self::TYPE_PHARMA_CODE_TWO_TRACKS => new TypePharmacodeTwoCode,
         };
     }
 }

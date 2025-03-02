@@ -372,7 +372,7 @@ class TypeIntelligentMailBarcode implements TypeInterface
             }
             if (($fcs & $bitmask) > 0) {
                 // bitwise invert
-                $chrcode = ((~$chrcode) & 8191); /** @phpstan-ignore-line */
+                $chrcode = ((~$chrcode) & 8191);
             }
             $characters[] = $chrcode;
             $bitmask /= 2;
