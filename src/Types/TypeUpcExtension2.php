@@ -23,20 +23,20 @@ class TypeUpcExtension2 implements TypeInterface
     {
         $len = $this->length;
 
-        //Padding
+        // Padding
         $code = str_pad($code, $len, '0', STR_PAD_LEFT);
 
         // calculate check digit
         if ($len === 2) {
-            $r = $code % 4;
+            $r = (int) $code % 4;
         } elseif ($len === 5) {
             $r = (3 * ((int) $code[0] + (int) $code[2] + (int) $code[4])) + (9 * ((int) $code[1] + (int) $code[3]));
             $r %= 10;
         } else {
-            throw new InvalidCheckDigitException();
+            throw new InvalidCheckDigitException;
         }
 
-        //Convert digits to bars
+        // Convert digits to bars
         $codes = [
             'A' => [ // left odd parity
                 '0' => '0001101',

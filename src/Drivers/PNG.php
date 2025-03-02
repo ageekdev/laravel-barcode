@@ -66,7 +66,7 @@ class PNG extends AbstractGenerator
         $foregroundColor = $this->getForegroundColor();
 
         if ($this->useImagick) {
-            $imagickBarsShape = new imagickdraw();
+            $imagickBarsShape = new imagickdraw;
             $imagickBarsShape->setFillColor(new imagickpixel('rgb('.implode(',', $foregroundColor).')'));
         } else {
             $image = $this->createGdImageObject($width, $this->height);
@@ -127,7 +127,7 @@ class PNG extends AbstractGenerator
      */
     protected function createImagickImageObject(int $width, int $height): Imagick
     {
-        $image = new Imagick();
+        $image = new Imagick;
         $image->newImage($width, $height, 'none', 'PNG');
 
         return $image;

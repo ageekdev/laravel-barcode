@@ -206,7 +206,7 @@ class TypeCode128 implements TypeInterface
                     if (preg_match('/(\d{2})/', $chrnum) > 0) {
                         $code_data[] = (int) $chrnum;
                     } else {
-                        throw new InvalidCharacterException();
+                        throw new InvalidCharacterException;
                     }
                 }
                 break;
@@ -218,7 +218,7 @@ class TypeCode128 implements TypeInterface
                 $numseq = [];
                 preg_match_all('/(\d{4,})/', $code, $numseq, PREG_OFFSET_CAPTURE);
 
-                if (isset($numseq[1]) && ! empty($numseq[1])) {
+                if (! empty($numseq[1])) {
                     $end_offset = 0;
 
                     foreach ($numseq[1] as $val) {
@@ -385,7 +385,7 @@ class TypeCode128 implements TypeInterface
         // get A sequences (if any)
         $numseq = [];
         preg_match_all('/([\x00-\x1f])/', $code, $numseq, PREG_OFFSET_CAPTURE);
-        if (isset($numseq[1]) && ! empty($numseq[1])) {
+        if (! empty($numseq[1])) {
             $end_offset = 0;
             foreach ($numseq[1] as $val) {
                 $offset = $val[1];
