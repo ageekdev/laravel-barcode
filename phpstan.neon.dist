@@ -4,4 +4,6 @@ parameters:
         - src
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
+    ignoreErrors:
+        - '#Parameter \$type of method .* has typehint with deprecated enum AgeekDev\\Barcode\\Enums\\Type#'
 
