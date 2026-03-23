@@ -1,5 +1,7 @@
 <?php
 
+use AgeekDev\Barcode\Enums\BarcodeType;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -27,7 +29,7 @@ return [
     | TYPE_KIX, TYPE_IMB, TYPE_CODABAR, TYPE_CODE_11, TYPE_PHARMA_CODE, TYPE_PHARMA_CODE_TWO_TRACKS
     |
     */
-    'type' => \AgeekDev\Barcode\Enums\BarcodeType::CODE_128,
+    'type' => BarcodeType::CODE_128,
 
     /*
      * Foreground color of the barcode

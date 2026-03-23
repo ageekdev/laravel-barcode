@@ -13,6 +13,7 @@ use AgeekDev\Barcode\Enums\BarcodeType;
 use AgeekDev\Barcode\Enums\Type;
 use AgeekDev\Barcode\Exceptions\BarcodeException;
 use Closure;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Str;
@@ -28,7 +29,7 @@ class BarcodeManager implements Factory
     /**
      * The configuration repository instance.
      *
-     * @var \Illuminate\Contracts\Config\Repository
+     * @var Repository
      */
     protected mixed $config;
 
@@ -152,7 +153,7 @@ class BarcodeManager implements Factory
     /**
      * Set the barcode type.
      */
-    public function type(BarcodeType|Type $type): ImageType
+    public function type(BarcodeType $type): ImageType
     {
         return $this->imageType()->type($type);
     }
