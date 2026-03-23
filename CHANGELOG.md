@@ -2,6 +2,23 @@
 
 All notable changes to `laravel-barcode` will be documented in this file.
 
+## v2.0.0 - 2026-03-23
+
+### What's Changed
+
+* Laravel 13 support and refactor code by @tintnaingwin in https://github.com/ageekdev/laravel-barcode/pull/11
+
+### 🛠️ Refactoring & Improvements
+
+* **PHP 8.5+ Readiness**: Removed redundant `imagedestroy()`
+* **Code Standards Clean-up**: Corrected class casing for `ImagickDraw` and `ImagickPixel` to conform strictly with PHP framework standards.
+
+### 📦 Dependency Updates
+
+* Bumped requiring dev dependencies, including full upgrade paths to `pestphp/pest (^3.0|^4.0)` and `larastan/larastan (^3.0)`.
+
+**Full Changelog**: https://github.com/ageekdev/laravel-barcode/compare/v1.3.0...v2.0.0
+
 ## v1.3.0 - 2025-03-02
 
 ### What's Changed
