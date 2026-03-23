@@ -6,8 +6,8 @@ use AgeekDev\Barcode\AbstractGenerator;
 use AgeekDev\Barcode\BarcodeBar;
 use AgeekDev\Barcode\Exceptions\BarcodeException;
 use Imagick;
-use imagickdraw;
-use imagickpixel;
+use ImagickDraw;
+use ImagickPixel;
 use Spatie\Color\Hex;
 
 class PNG extends AbstractGenerator
@@ -66,8 +66,8 @@ class PNG extends AbstractGenerator
         $foregroundColor = $this->getForegroundColor();
 
         if ($this->useImagick) {
-            $imagickBarsShape = new imagickdraw;
-            $imagickBarsShape->setFillColor(new imagickpixel('rgb('.implode(',', $foregroundColor).')'));
+            $imagickBarsShape = new ImagickDraw;
+            $imagickBarsShape->setFillColor(new ImagickPixel('rgb('.implode(',', $foregroundColor).')'));
         } else {
             $image = $this->createGdImageObject($width, $this->height);
             $gdForegroundColor = imagecolorallocate($image, $foregroundColor[0], $foregroundColor[1], $foregroundColor[2]);
@@ -136,6 +136,5 @@ class PNG extends AbstractGenerator
     protected function generateGdImage($image): void
     {
         imagepng($image);
-        imagedestroy($image);
     }
 }

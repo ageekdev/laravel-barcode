@@ -17,6 +17,5 @@ class JPG extends PNG
     protected function generateGdImage($image): void
     {
         imagejpeg($image);
-        imagedestroy($image);
     }
 }
