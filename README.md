@@ -12,6 +12,7 @@
     <a href="https://laravel.com/docs/10.x"><img alt="Laravel 10.x" src="https://img.shields.io/badge/Laravel-10.x-red.svg?style=flat-square"></a>
     <a href="https://laravel.com/docs/11.x"><img alt="Laravel 11.x" src="https://img.shields.io/badge/Laravel-11.x-red.svg?style=flat-square"></a>
     <a href="https://laravel.com/docs/12.x"><img alt="Laravel 12.x" src="https://img.shields.io/badge/Laravel-12.x-red.svg?style=flat-square"></a>
+    <a href="https://laravel.com/docs/12.x"><img alt="Laravel 13.x" src="https://img.shields.io/badge/Laravel-13.x-red.svg?style=flat-square"></a>
 </p>
 
 # Laravel Barcode Generator
